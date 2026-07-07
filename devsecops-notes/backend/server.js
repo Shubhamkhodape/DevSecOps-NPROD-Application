@@ -1,22 +1,29 @@
 require("dotenv").config();
 
-const express = require("express");
-const cors = require("cors");
+const app = require("./app");
+const connectDB = require("./config/database");
 
-const app = express();
+/*
+|--------------------------------------------------------------------------
+| Connect Database
+|--------------------------------------------------------------------------
+*/
 
-app.use(cors());
-app.use(express.json());
+connectDB();
 
-app.get("/", (req, res) => {
-    res.json({
-        status: "success",
-        message: "DevSecOps Notes API is running 🚀"
-    });
-});
+/*
+|--------------------------------------------------------------------------
+| Start Server
+|--------------------------------------------------------------------------
+*/
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log("=================================");
+    console.log(" DevSecOps Notes API Started");
+    console.log("=================================");
+    console.log(` Environment : ${process.env.NODE_ENV || "development"}`);
+    console.log(` Port        : ${PORT}`);
+    console.log("=================================");
 });
