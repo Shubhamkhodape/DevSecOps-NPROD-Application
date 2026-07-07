@@ -1,0 +1,32 @@
+# Node
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Build
+dist/
+build/
+
+# Coverage
+coverage/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Kubernetes
+*.secret.yaml
